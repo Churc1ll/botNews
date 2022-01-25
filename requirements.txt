@@ -1,7 +1,6 @@
 telebot
 requests
 bs4 
-re
 schedule
 datetime
 time 
