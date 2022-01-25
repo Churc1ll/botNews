@@ -66,7 +66,7 @@ def botMessage():
     assert ret_msg.message_id
 
 
-schedule.every().day.at("23:25").do(botMessage)
+schedule.every().day.at("02:58").do(botMessage)
 
 while True: 
     schedule.run_pending()
