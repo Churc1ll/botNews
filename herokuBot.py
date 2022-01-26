@@ -137,8 +137,10 @@ def main():
     def botMessage():
         updater.bot.sendMessage(
             chat_id=chatId, text=mess)
-    botMessage()
-    schedule.every().day.at("13:25").do(botMessage)
+    # botMessage()
+    schedule.every(1).minutes.day.do(botMessage)
+
+    # schedule.every().day.at("13:25").do(botMessage)
 
     while True:
         schedule.run_pending()
