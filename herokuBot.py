@@ -4,7 +4,6 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Callb
 import os
 
 
-
 import telebot
 
 import requests
@@ -17,7 +16,6 @@ import datetime
 import time
 
 chatId = -1001546899691
-
 
 
 PORT = int(os.environ.get('PORT', 5000))
@@ -47,7 +45,9 @@ def error(update, context):
     """Log Errors caused by Updates."""
     logger.warning('Update "%s" caused error "%s"', update, context.error)
 
-# my 
+# my
+
+
 def parse(url, tag, details):
     response = requests.get(url)
     answer = BeautifulSoup(response.text, 'lxml')
@@ -55,14 +55,14 @@ def parse(url, tag, details):
 
 
 def corona():
-  quote = parse(
-      'https://coronavirus-monitorus.ru/moskva/',
-      'sup',
-      ''
-  )[0]
-  answ = re.findall(r'\d+', str(quote))
+    quote = parse(
+        'https://coronavirus-monitorus.ru/moskva/',
+        'sup',
+        ''
+    )[0]
+    answ = re.findall(r'\d+', str(quote))
 
-  return ' '.join(answ)
+    return ' '.join(answ)
 
 
 def main():
