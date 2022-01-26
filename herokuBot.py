@@ -179,7 +179,7 @@ while True:
         # your function that tweets
         botMessage()
         # sleep to avoid running the function again in the next loop
-        time.sleep(15)
+        time.sleep(20)
 
 
 # botMessage()
