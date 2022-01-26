@@ -128,10 +128,21 @@ def main():
     # Run the bot until you press Ctrl-C or the process receives SIGINT,
     # SIGTERM or SIGABRT. This should be used most of the time, since
     # start_polling() is non-blocking and will stop the bot gracefully.
-    updater.idle()
 
-    updater.bot.sendMessage(
-        chat_id=chatId, text=mess)
+    # updater.idle()
+
+    # updater.bot.sendMessage(
+    #     chat_id=chatId, text=mess)
+
+    def botMessage():
+        updater.bot.sendMessage(
+            chat_id=chatId, text=mess)
+
+    schedule.every().day.at("13:25").do(botMessage)
+
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
 
 
 if __name__ == '__main__':
