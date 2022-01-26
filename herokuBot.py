@@ -77,8 +77,9 @@ def botMessage():
 if __name__ == '__main__':
     main()
 
+botMessage()
+
 while True:
-    botMessage()
     # sleep to avoid running the function again in the next loop
     time.sleep(86400)
 
