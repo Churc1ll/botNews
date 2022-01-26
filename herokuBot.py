@@ -158,10 +158,10 @@ def botMessage():
 # botMessage()
 schedule.every(1).minutes.day.do(botMessage)
 
-while True:
-    schedule.run_pending()
-    time.sleep(1)
-
 
 if __name__ == '__main__':
     main()
+
+while True:
+    schedule.run_pending()
+    time.sleep(1)
