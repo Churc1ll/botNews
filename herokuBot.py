@@ -162,11 +162,11 @@ def botMessage():
 #         chat_id=chatId, text=mess)
 
 
-start_time = datetime.datetime.now()
-interval = start_time + datetime.timedelta(minutes=1)
+# start_time = datetime.datetime.now()
+# interval = start_time + datetime.timedelta(minutes=1)
 
 # dynamically create the interval times
-tweet_times = [start_time.minute, interval.minute]
+# tweet_times = [start_time.minute, interval.minute]
 # botMessage()
 
 
@@ -174,12 +174,12 @@ if __name__ == '__main__':
     main()
 
 while True:
-    current_time = datetime.datetime.now()
-    if current_time.minute in tweet_times:
-        # your function that tweets
-        botMessage()
-        # sleep to avoid running the function again in the next loop
-        time.sleep(40)
+    # current_time = datetime.datetime.now()
+    # if current_time.minute in tweet_times:
+    # your function that tweets
+    botMessage()
+    # sleep to avoid running the function again in the next loop
+    time.sleep(40)
 
 
 # botMessage()
