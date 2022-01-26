@@ -3,6 +3,8 @@ import logging
 import os
 import time
 
+TOKEN = os.environ["TOKEN"]
+
 chatId = -1001546899691
 
 PORT = int(os.environ.get('PORT', 5000))
@@ -12,7 +14,6 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
                     level=logging.INFO)
 
 logger = logging.getLogger(__name__)
-TOKEN = '5010883386:AAGjmE4-q6WDcinGkFGjVfSU4kpna8Q7eEc'
 
 # Define a few command handlers. These usually take the two arguments update and
 # context. Error handlers also receive the raised TelegramError object in error.
@@ -70,7 +71,7 @@ updater = Updater(TOKEN, use_context=True)
 def botMessage():
     from parse import message
     ret_msg = updater.bot.sendMessage(
-        chat_id=chatId, text=message, parse_mode="Markdown")
+      chat_id=chatId, text=message, parse_mode="Markdown")
     assert ret_msg.message_id
 
 
