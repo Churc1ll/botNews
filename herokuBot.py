@@ -97,6 +97,7 @@ def main():
     updater.idle()
 
     mes = corona()
+    print (mes)
     updater.bot.sendMessage(
         chat_id=chatId, text=mes)
 
