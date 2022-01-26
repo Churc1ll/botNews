@@ -50,7 +50,7 @@ def error(update, context):
 
 def date():
     now = datetime.datetime.now()
-    return '0' + str(now.day) if len(str(now.day)) < 2 else str(now.day) + '. ' + '0' + str(now.month) if len(str(now.month)) < 2 else str(now.month)
+    return '0' + str(now.day) if len(str(now.day)) < 2 else str(now.day) + '. ' + '0' + str(now.month) if len(str(now.month)) < 2 else str(now.month) + now.hour + now.minutue
 
 
 def parse(url, tag, details):
