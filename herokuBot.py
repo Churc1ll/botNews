@@ -156,7 +156,7 @@ def botMessage():
 
 
 start_time = datetime.datetime.now()
-interval = start_time + datetime.timedelta(minutes=2)
+interval = start_time + datetime.timedelta(minutes=1)
 
 # dynamically create the interval times
 tweet_times = [start_time.minute, interval.minute]
