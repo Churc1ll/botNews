@@ -1,7 +1,25 @@
 
 import logging
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 import os
+
+
+
+import telebot
+
+import requests
+from bs4 import BeautifulSoup
+
+import re
+
+import schedule
+import datetime
+import time
+
+chatId = -1001546899691
+
+
+
 PORT = int(os.environ.get('PORT', 5000))
 
 # Enable logging
@@ -18,11 +36,6 @@ TOKEN = '5010883386:AAGjmE4-q6WDcinGkFGjVfSU4kpna8Q7eEc'
 def start(update, context):
     """Send a message when the command /start is issued."""
     update.message.reply_text('Hi!')
-
-
-def help(update, context):
-    """Send a message when the command /help is issued."""
-    update.message.reply_text('Help!')
 
 
 def echo(update, context):
@@ -47,7 +60,6 @@ def main():
 
     # on different commands - answer in Telegram
     dp.add_handler(CommandHandler("start", start))
-    dp.add_handler(CommandHandler("help", help))
 
     # on noncommand i.e message - echo the message on Telegram
     dp.add_handler(MessageHandler(Filters.text, echo))
@@ -66,6 +78,9 @@ def main():
     # SIGTERM or SIGABRT. This should be used most of the time, since
     # start_polling() is non-blocking and will stop the bot gracefully.
     updater.idle()
+
+    updater.bot.send_message(
+        chat_id=chatId, text="I'm a bot, please talk to me!")
 
 
 if __name__ == '__main__':
