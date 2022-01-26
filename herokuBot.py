@@ -50,7 +50,8 @@ def error(update, context):
 
 def date():
     now = datetime.datetime.now()
-    return '0' + str(now.day) if len(str(now.day)) < 2 else str(now.day) + '. ' + '0' + str(now.month) if len(str(now.month)) < 2 else str(now.month) + ' ' + now.hour 
+    return '0' + str(now.day) if len(str(now.day)) < 2 else str(now.day) + '. ' + '0' + str(now.month) if len(str(now.month)) < 2 else str(now.month) + ' ' + now.hour
+
 
 def parse(url, tag, details):
     response = requests.get(url)
@@ -136,7 +137,7 @@ def main():
     def botMessage():
         updater.bot.sendMessage(
             chat_id=chatId, text=mess)
-
+    botMessage()
     schedule.every().day.at("13:25").do(botMessage)
 
     while True:
