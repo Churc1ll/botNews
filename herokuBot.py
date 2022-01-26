@@ -47,6 +47,23 @@ def error(update, context):
     """Log Errors caused by Updates."""
     logger.warning('Update "%s" caused error "%s"', update, context.error)
 
+# my 
+def parse(url, tag, details):
+    response = requests.get(url)
+    answer = BeautifulSoup(response.text, 'lxml')
+    return answer.find_all(tag, details)
+
+
+def corona():
+  quote = parse(
+      'https://coronavirus-monitorus.ru/moskva/',
+      'sup',
+      ''
+  )[0]
+  answ = re.findall(r'\d+', str(quote))
+
+  return ' '.join(answ)
+
 
 def main():
     """Start the bot."""
@@ -80,7 +97,7 @@ def main():
     updater.idle()
 
     updater.bot.sendMessage(
-        chat_id=chatId, text="I'm a bot, please talk to me!")
+        chat_id=chatId, text=corona())
 
 
 if __name__ == '__main__':
