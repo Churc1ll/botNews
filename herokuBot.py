@@ -64,6 +64,9 @@ def corona():
 
     return ' '.join(answ)
 
+mes = corona()
+print (mes)
+    
 
 def main():
     """Start the bot."""
@@ -98,6 +101,7 @@ def main():
 
     mes = corona()
     print (mes)
+    
     updater.bot.sendMessage(
         chat_id=chatId, text=mes)
 
