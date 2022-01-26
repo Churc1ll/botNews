@@ -155,13 +155,30 @@ def botMessage():
         chat_id=chatId, text=mess)
 
 
-# botMessage()
-schedule.every(1).minutes.day.do(botMessage)
+start_time = datetime.datetime.now()
+interval = start_time + datetime.timedelta(minutes=1)
+
+# dynamically create the interval times
+tweet_times = [start_time.minute, interval.minute]
 
 
 if __name__ == '__main__':
     main()
 
+
 while True:
-    schedule.run_pending()
-    time.sleep(1)
+    current_time = datetime.datetime.now()
+    if current_time.minute in tweet_times:
+        # your function that tweets
+        botMessage()
+        # sleep to avoid running the function again in the next loop
+        time.sleep(3)
+
+
+# botMessage()
+# schedule.every(1).minutes.day.do(botMessage)
+
+
+# while True:
+#     schedule.run_pending()
+#     time.sleep(1)
