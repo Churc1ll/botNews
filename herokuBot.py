@@ -167,12 +167,16 @@ tweet_times = [start_time.minute, interval.minute]
 
 
 while True:
+
+    schedule.run_pending()
+    time.sleep(1)
+
     current_time = datetime.datetime.now()
     if current_time.minute in tweet_times:
         # your function that tweets
         botMessage()
         # sleep to avoid running the function again in the next loop
-        time.sleep(120)
+        # time.sleep(120)
 
 
 # botMessage()
@@ -180,5 +184,3 @@ while True:
 
 
 # while True:
-#     schedule.run_pending()
-#     time.sleep(1)
