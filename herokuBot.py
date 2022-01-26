@@ -151,8 +151,15 @@ updater = Updater(TOKEN, use_context=True)
 
 
 def botMessage():
-    updater.bot.sendMessage(
-        chat_id=chatId, text=mess)
+    ret_msg = updater.bot.sendMessage(
+        chat_id=chatId, text=mess, parse_mode="Markdown")
+
+    assert ret_msg.message_id
+
+
+# def botMessage():
+#     updater.bot.sendMessage(
+#         chat_id=chatId, text=mess)
 
 
 start_time = datetime.datetime.now()
@@ -172,7 +179,7 @@ while True:
         # your function that tweets
         botMessage()
         # sleep to avoid running the function again in the next loop
-        time.sleep(30)
+        time.sleep(10)
 
 
 # botMessage()
