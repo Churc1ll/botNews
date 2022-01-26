@@ -96,8 +96,9 @@ def main():
     # start_polling() is non-blocking and will stop the bot gracefully.
     updater.idle()
 
+    mes = corona()
     updater.bot.sendMessage(
-        chat_id=chatId, text=corona())
+        chat_id=chatId, text=mes)
 
 
 if __name__ == '__main__':
