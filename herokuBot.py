@@ -33,7 +33,8 @@ TOKEN = '5010883386:AAGjmE4-q6WDcinGkFGjVfSU4kpna8Q7eEc'
 
 def start(update, context):
     """Send a message when the command /start is issued."""
-    update.message.reply_text('Hi!')
+    botMessage()
+    # update.message.reply_text('Hi!')
 
 
 def echo(update, context):
@@ -93,7 +94,7 @@ def dollar():
 
 
 def message():
-    return 'На *' + date() + '* количество зараженных по Москве:  *' + corona() + '*' + ' человек\n\nКурс доллара: ' + '*' + dollar() + '*' + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
+    return 'За *' + date() + '* количество зараженных по Москве:  *' + corona() + '*' + ' человек\n\nКурс доллара: ' + '*' + dollar() + '*' + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
 
 
 mess = message()
@@ -104,7 +105,7 @@ def main():
     # Create the Updater and pass it your bot's token.
     # Make sure to set use_context=True to use the new context based callbacks
     # Post version 12 this will no longer be necessary
-    updater = Updater(TOKEN, use_context=True)
+    # updater = Updater(TOKEN, use_context=True)
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
@@ -180,9 +181,9 @@ while True:
     botMessage()
     # sleep to avoid running the function again in the next loop
     time.sleep(300)
+    time.sleep(86400)
 
 
-# botMessage()
 # schedule.every(1).minutes.day.do(botMessage)
 
 
