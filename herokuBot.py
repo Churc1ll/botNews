@@ -147,5 +147,21 @@ def main():
         time.sleep(1)
 
 
+updater = Updater(TOKEN, use_context=True)
+
+
+def botMessage():
+    updater.bot.sendMessage(
+        chat_id=chatId, text=mess)
+
+
+# botMessage()
+schedule.every(1).minutes.day.do(botMessage)
+
+while True:
+    schedule.run_pending()
+    time.sleep(1)
+
+
 if __name__ == '__main__':
     main()
