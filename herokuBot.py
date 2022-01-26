@@ -79,7 +79,7 @@ def main():
     # start_polling() is non-blocking and will stop the bot gracefully.
     updater.idle()
 
-    updater.bot.send_message(
+    updater.bot.sendMessage(
         chat_id=chatId, text="I'm a bot, please talk to me!")
 
 
