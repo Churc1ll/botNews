@@ -160,10 +160,10 @@ interval = start_time + datetime.timedelta(minutes=1)
 
 # dynamically create the interval times
 tweet_times = [start_time.minute, interval.minute]
-botMessage()
+# botMessage()
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
 
 
 while True:
