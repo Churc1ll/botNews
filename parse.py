@@ -17,9 +17,9 @@ def parse(url, tag, details):
 
 def corona():
     quote = parse(
-        'https://coronavirus-monitorus.ru/moskva/',
-        'sup',
-        ''
+        'https://coronavirus-control.ru/',
+        'span',
+        'rednum'
     )[0]
     answ = re.findall(r'\d+', str(quote))
     return ' '.join(answ)
@@ -37,10 +37,10 @@ def bitcoin():
 
 def dollar():
     quote = parse(
-        'https://quote.rbc.ru/ticker/72413',
-        'span',
-        'chart__info__sum'
-    )
+        'https://www.banki.ru/products/currency/usd/',
+        'div',
+        'currency-table__large-text'
+    )[0]
     sum = ''.join(re.findall(r'\d+', str(quote)))
     return sum[0:2] + ',' + sum[2:]
 
@@ -50,3 +50,5 @@ def message():
 
 
 message = message()
+
+print (message)

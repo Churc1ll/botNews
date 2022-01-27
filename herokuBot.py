@@ -5,7 +5,8 @@ import time
 
 TOKEN = os.environ["TOKEN"]
 
-chatId = -1001546899691
+# chatId = -1001546899691
+chatId = -755407856
 
 PORT = int(os.environ.get('PORT', 5000))
 
@@ -77,9 +78,10 @@ def botMessage():
 if __name__ == '__main__':
     main()
 
-botMessage()
 
 while True:
+    botMessage()
+
     # sleep to avoid running the function again in the next loop
     time.sleep(86400)
 
