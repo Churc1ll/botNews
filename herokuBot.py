@@ -5,8 +5,8 @@ import time
 
 TOKEN = os.environ["TOKEN"]
 
-chatId = -1001546899691
-# chatId = -755407856
+# chatId = -1001546899691
+chatId = -755407856
 
 PORT = int(os.environ.get('PORT', 5000))
 
@@ -63,6 +63,7 @@ def main():
     # SIGTERM or SIGABRT. This should be used most of the time, since
     # start_polling() is non-blocking and will stop the bot gracefully.
 
+    botMessage()
     updater.idle()
 
 
@@ -78,10 +79,9 @@ def botMessage():
 
 if __name__ == '__main__':
     main()
-    botMessage()
 
 
-while True: 
+while True:
     time.sleep(86400)
     # sleep to avoid running the function again in the next loop
 
