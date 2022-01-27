@@ -19,6 +19,7 @@ logger = logging.getLogger(__name__)
 # Define a few command handlers. These usually take the two arguments update and
 # context. Error handlers also receive the raised TelegramError object in error.
 
+
 def start(update, context):
     botMessage()
 
@@ -71,19 +72,18 @@ updater = Updater(TOKEN, use_context=True)
 def botMessage():
     from parse import message
     ret_msg = updater.bot.sendMessage(
-      chat_id=chatId, text=message, parse_mode="Markdown")
+        chat_id=chatId, text=message, parse_mode="Markdown")
     assert ret_msg.message_id
 
 
 if __name__ == '__main__':
     main()
+    botMessage()
 
 
 while True:
-    botMessage()
-
-    # sleep to avoid running the function again in the next loop
     time.sleep(86400)
+    # sleep to avoid running the function again in the next loop
 
 
 # schedule.every(1).day.do(botMessage)
