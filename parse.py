@@ -25,15 +25,15 @@ def corona():
 
 
 def dollar():
-    # quote = parse(
-    #     'https://www.banki.ru/products/currency/usd/',
-    #     'div',
-    #     'currency-table__large-text'
-    # )[0]
-    # sum = ''.join(re.findall(r'\d+', str(quote)))
-    # return '*' + sum[0:2] + ',' + sum[2:4] + '*'
-    return 'fuck u'
+    quote = parse(
+        'https://www.banki.ru/products/currency/usd/',
+        'div',
+        'currency-table__large-text'
+    )
+    sum = ''.join(re.findall(r'\d+', str(quote)))
+    return '*' + sum[0:2] + ',' + sum[2:4] + '*'
 
+print(dollar())
 
 def bitcoin():
     quote = parse(
@@ -50,5 +50,3 @@ def message():
 
 
 message = message()
-
-print (dollar())
