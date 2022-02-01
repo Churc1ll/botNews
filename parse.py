@@ -48,7 +48,7 @@ def dollar():
 
 
 def message():
-    return 'За' + date() + 'количество зараженных по Москве:  *' + corona() + '*'
+    return 'За' + date() + 'количество зараженных по Москве:  *' + corona() + '*' + ' человек\n\nКурс доллара: ' + '*' + dollar() + '*' + 'р\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
 
 
 message = message()
