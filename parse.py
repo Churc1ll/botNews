@@ -24,6 +24,19 @@ def corona():
     return ' '.join(answ)
 
 
+def dollar():
+    quote = parse(
+        'https://www.banki.ru/products/curren0cy/usd/',
+        'div',
+        'currency-table__large-text'
+    )[0]
+    print(quote)
+    sum = ''.join(re.findall(r'\d+', str(quote)))
+    print(sum)
+    return '*' + sum[0:2] + ',' + sum[2:4] + '*'
+print(dollar())
+
+
 def bitcoin():
     quote = parse(
         'https://www.rbc.ru/crypto/currency/btcusd',
@@ -32,18 +45,9 @@ def bitcoin():
     )[1]
     sum = ''.join(re.findall(r'\d+', str(quote)))
     return sum[0:2] + ' ' + sum[2:5] + ',' + (sum[5:] if len(sum) > 6 else '00')
-
-
-def dollar():
-    quote = parse(
-        'https://www.banki.ru/products/currency/usd/',
-        'div',
-        'currency-table__large-text'
-    )[0]
-    sum = ''.join(re.findall(r'\d+', str(quote)))
-    return 'fuck'
-
 def message():
+
+
     return 'За ' + date() + ' количество зараженных по Москве:  *' + corona() + '*' + ' человек\n\nКурс доллара: ' + dollar() + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
 
 
