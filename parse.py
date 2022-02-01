@@ -6,7 +6,7 @@ import datetime
 def date():
     now = datetime.datetime.now()
     # print(str(now.month))
-    return '*01*'
+    return '01'
     # return '*' + ('0' + str(now.day) if len(str(now.day)) < 2 else str(now.day)) + '. ' + ('0' + str(now.month) if len(str(now.month)) < 2 else str(now.month)) + '*' 
 
 print(date())
@@ -48,7 +48,7 @@ def dollar():
 
 
 def message():
-    return 'За количество зараженных по Москве человек\n\nКурс доллара: ' + '*' + dollar() + '*' + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
+    return 'За' + date() + 'количество зараженных по Москве:  *' + corona() + '*' + ' человек\n\nКурс доллара: ' + '*' + dollar() + '*' + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
 
 
 message = message()
