@@ -5,8 +5,8 @@ import time
 
 TOKEN = os.environ["TOKEN"]
 
-# chatId = -1001546899691
-chatId = -755407856
+chatId = -1001546899691
+# chatId = -755407856
 
 PORT = int(os.environ.get('PORT', 5000))
 
@@ -71,7 +71,10 @@ updater = Updater(TOKEN, use_context=True)
 
 
 def botMessage():
-    return '1222'
+    # from parse import message
+    ret_msg = updater.bot.sendMessage(
+        chat_id=chatId, text='dd', parse_mode="Markdown")
+    assert ret_msg.message_id
 
 
 if __name__ == '__main__':
