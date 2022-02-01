@@ -1,13 +1,17 @@
 import requests
 from bs4 import BeautifulSoup
 import re
-import datetime
+# import datetime
+from time import gmtime, strftime
+
+
+
 
 def date():
     now = datetime.now()
     # print(str(now.month))
     # return ('0' + str(now.day) if len(str(now.day)) < 2 else str(now.day)) + '. ' + ('0' + str(now.month) if len(str(now.month)) < 2 else str(now.month)) + ''
-    return '0' + str(now.day) + '. 0' + str(now.month)
+    return strftime("%m-%d", gmtime())
 
 def parse(url, tag, details):
     response = requests.get(url)
