@@ -31,7 +31,8 @@ def dollar():
         'currency-table__large-text'
     )[0]
     sum = ''.join(re.findall(r'\d+', str(quote)))
-    return '*' + sum[0:2] + ',' + sum[2:4] + '*'
+    # return '*' + sum[0:2] + ',' + sum[2:4] + '*'
+    return sum 
 
 
 def bitcoin():
@@ -50,4 +51,4 @@ def message():
 
 message = message()
 
-# print (message)
+print (dollar())
