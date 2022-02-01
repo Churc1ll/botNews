@@ -43,11 +43,10 @@ def dollar():
         'currency-table__large-text'
     )[0]
     sum = ''.join(re.findall(r'\d+', str(quote)))
-    return sum[0:2] + ',' + sum[2:4]
-
+    return '*' + sum[0:2] + ',' + sum[2:4] + '*'
 
 def message():
-    return 'За ' + date() + ' количество зараженных по Москве:  *' + corona() + '*' + ' человек\n\nКурс доллара: ' + '*' + dollar() + '*' + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
+    return 'За ' + date() + ' количество зараженных по Москве:  *' + corona() + '*' + ' человек\n\nКурс доллара: ' + dollar() + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
 
 
 message = message()
