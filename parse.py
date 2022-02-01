@@ -26,11 +26,11 @@ def corona():
 
 def dollar():
     quote = parse(
-        'https://www.banki.ru/products/currency/usd/',
+        'https://cbr.ru/',
         'div',
-        'currency-table__large-text'
+        'col-md-2 col-xs-9 _right mono-num'
     )
-    sum = ''.join(re.findall(r'\d+', str(quote)))
+    sum = ''.join(re.findall(r'\d+', str(quote)[33:]))
     return '*' + sum[0:2] + ',' + sum[2:4] + '*'
 
 print(dollar())
