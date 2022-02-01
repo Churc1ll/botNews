@@ -1,7 +1,6 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
 import os
-import time
 
 TOKEN = os.environ["TOKEN"]
 

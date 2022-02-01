@@ -8,7 +8,6 @@ def date():
     # print(str(now.month))
     return ('0' + str(now.day) if len(str(now.day)) < 2 else str(now.day)) + '. ' + ('0' + str(now.month) if len(str(now.month)) < 2 else str(now.month)) 
 
-print(date())
 
 def parse(url, tag, details):
     response = requests.get(url)
