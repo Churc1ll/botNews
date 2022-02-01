@@ -30,9 +30,9 @@ def dollar():
         'div',
         'currency-table__large-text'
     )[0]
-    sum = ''.join(re.findall(r'\d+', str(quote)))
+    # sum = ''.join(re.findall(r'\d+', str(quote)))
     # return '*' + sum[0:2] + ',' + sum[2:4] + '*'
-    return sum 
+    return quote 
 
 
 def bitcoin():
