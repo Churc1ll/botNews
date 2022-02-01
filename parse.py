@@ -8,7 +8,7 @@ from time import gmtime, strftime
 
 
 def date():
-    now = datetime.now()
+    # now = datetime.now()
     # print(str(now.month))
     # return ('0' + str(now.day) if len(str(now.day)) < 2 else str(now.day)) + '. ' + ('0' + str(now.month) if len(str(now.month)) < 2 else str(now.month)) + ''
     return strftime("%m-%d", gmtime())
