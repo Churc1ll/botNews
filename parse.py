@@ -33,7 +33,6 @@ def dollar():
     sum = ''.join(re.findall(r'\d+', str(quote)[33:]))
     return '*' + sum[0:2] + ',' + sum[2:4] + '*'
 
-print(dollar())
 
 def bitcoin():
     quote = parse(
@@ -43,10 +42,9 @@ def bitcoin():
     )[1]
     sum = ''.join(re.findall(r'\d+', str(quote)))
     return sum[0:2] + ' ' + sum[2:5] + ',' + (sum[5:] if len(sum) > 6 else '00')
+
+
 def message():
-
-
     return 'За ' + date() + ' количество зараженных по Москве:  *' + corona() + '*' + ' человек\n\nКурс доллара: ' + dollar() + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
-
 
 message = message()
