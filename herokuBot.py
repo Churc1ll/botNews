@@ -71,7 +71,7 @@ updater = Updater(TOKEN, use_context=True)
 
 
 def botMessage():
-    return 11
+    return '1222'
 
 
 if __name__ == '__main__':
