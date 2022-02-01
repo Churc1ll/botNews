@@ -1,17 +1,13 @@
 import requests
 from bs4 import BeautifulSoup
 import re
-# import datetime
-from time import gmtime, strftime
-
-
-
+import datetime
 
 def date():
-    # now = datetime.now()
+    now = datetime.datetime.now()
     # print(str(now.month))
-    # return ('0' + str(now.day) if len(str(now.day)) < 2 else str(now.day)) + '. ' + ('0' + str(now.month) if len(str(now.month)) < 2 else str(now.month)) + ''
-    return strftime("%m-%d", gmtime())
+    return ('0' + str(now.day) if len(str(now.day)) < 2 else str(now.day)) + '. ' + ('0' + str(now.month) if len(str(now.month)) < 2 else str(now.month)) 
+
 print(date())
 
 def parse(url, tag, details):
@@ -51,6 +47,9 @@ def dollar():
 
 
 def message():
-    return 'За *' + date() + "*"
+    return 'За *' + date() + '*' +'количество зараженных по Москве:  *' + corona() + '*' + ' человек\n\nКурс доллара: ' + '*' + dollar() + '*' + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
+
 
 message = message()
+
+# print (message)
