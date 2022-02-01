@@ -81,8 +81,8 @@ if __name__ == '__main__':
     main()
 
 
-while True:
-    time.sleep(86400)
+# while True:
+#     time.sleep( 86400 )
     # sleep to avoid running the function again in the next loop
 
 
