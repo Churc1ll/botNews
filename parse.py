@@ -5,10 +5,8 @@ import datetime
 
 def date():
     now = datetime.datetime.now()
-    # print(str(now.month))
     return '*' + ('0' + str(now.day) if len(str(now.day)) < 2 else str(now.day)) + '. ' + ('0' + str(now.month) if len(str(now.month)) < 2 else str(now.month)) + '*' 
 
-print(date())
 
 def parse(url, tag, details):
     response = requests.get(url)
@@ -43,7 +41,7 @@ def dollar():
         'currency-table__large-text'
     )[0]
     sum = ''.join(re.findall(r'\d+', str(quote)))
-    return '*' + sum[0:2] + ',' + sum[2:4] + '*'
+    return 'fuck'
 
 def message():
     return 'За ' + date() + ' количество зараженных по Москве:  *' + corona() + '*' + ' человек\n\nКурс доллара: ' + dollar() + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
