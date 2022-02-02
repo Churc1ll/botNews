@@ -4,8 +4,8 @@ import os
 
 TOKEN = os.environ["TOKEN"]
 
-chatId = -1001546899691
-# chatId = -755407856
+# chatId = -1001546899691
+chatId = -755407856
 
 PORT = int(os.environ.get('PORT', 5000))
 
