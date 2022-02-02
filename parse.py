@@ -30,8 +30,8 @@ def dollar():
         'div',
         'col-md-2 col-xs-9 _right mono-num'
     )
-
-    quote = quotes[0] if now.day%2 != 0 or now.hour > 12 else quotes[1]
+    quote = quotes[0]
+    # quote = quotes[0] if now.day%2 != 0 or now.hour > 12 else quotes[1]
     sum = ''.join(re.findall(r'\d+', str(quote)[33:]))
     return '*' + sum[0:2] + ',' + sum[2:4] + '*'
 
