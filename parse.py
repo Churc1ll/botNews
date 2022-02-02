@@ -22,7 +22,6 @@ def corona():
     )[0]
     answ = re.findall(r'\d+', str(quote))
     return ' '.join(answ)
-    return quote
 
 
 def dollar():
@@ -34,7 +33,6 @@ def dollar():
 
     quote = quotes[0] if now.day%2 != 0 or now.hour > 12 else quotes[1]
     sum = ''.join(re.findall(r'\d+', str(quote)[33:]))
-    # return quotes
     return '*' + sum[0:2] + ',' + sum[2:4] + '*'
 
 
@@ -51,6 +49,4 @@ def bitcoin():
 def message():
     return 'За ' + date() + ' количество зараженных по Москве:  *' + corona() + '*' + ' человек\n\nКурс доллара: ' + dollar() + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
 
-print(dollar())
-print(message())
 message = message()
