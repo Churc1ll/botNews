@@ -75,7 +75,7 @@ def botMessage():
         chat_id=chatId, text=message, parse_mode="Markdown")
     assert ret_msg.message_id
 
-
+ 
 if __name__ == '__main__':
     main()
 

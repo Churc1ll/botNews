@@ -49,4 +49,4 @@ def bitcoin():
 def message():
     return 'За ' + date() + ' количество зараженных по Москве:  *' + corona() + '*' + ' человек\n\nКурс доллара: ' + dollar() + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
 
-message = message()
+message = message() 
