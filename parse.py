@@ -3,9 +3,9 @@ from bs4 import BeautifulSoup
 import re
 import datetime
 
+now = datetime.datetime.now()
 def date():
-    now = datetime.datetime.now()
-    return '*' + ('0' + str(now.day) if len(str(now.day)) < 2 else str(now.day)) + '. ' + ('0' + str(now.month) if len(str(now.month)) < 2 else str(now.month)) + '*' 
+    return '*' + ('0' + str(now.day) if len(str(now.day)) < 2 else str(now.day)) + '. ' + ('0' + str(now.month) if len(str(now.month)) < 2 else str(now.month)) + '*'
 
 
 def parse(url, tag, details):
@@ -16,20 +16,22 @@ def parse(url, tag, details):
 
 def corona():
     quote = parse(
-        'https://coronavirus-control.ru/',
-        'span',
-        'rednum'
+        'https://coronavirus-monitorus.ru/moskva/',
+        'sup',
+        'new-cases'
     )[0]
     answ = re.findall(r'\d+', str(quote))
     return ' '.join(answ)
+    return quote
 
 
 def dollar():
-    quote = parse(
+    quotes = parse(
         'https://cbr.ru/',
         'div',
         'col-md-2 col-xs-9 _right mono-num'
     )
+    quote = quotes[0] if now.day%2 != 0 else quotes[1]
     sum = ''.join(re.findall(r'\d+', str(quote)[33:]))
     return '*' + sum[0:2] + ',' + sum[2:4] + '*'
 
@@ -47,4 +49,6 @@ def bitcoin():
 def message():
     return 'За ' + date() + ' количество зараженных по Москве:  *' + corona() + '*' + ' человек\n\nКурс доллара: ' + dollar() + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
 
+
+print(message())
 message = message()
