@@ -5,7 +5,7 @@ import os
 TOKEN = os.environ["TOKEN"]
 
 chatId = -1001546899691
-# chatId = -755407856
+chatIdTest = -755407856
 
 PORT = int(os.environ.get('PORT', 5000))
 
@@ -24,7 +24,7 @@ def start(update, context):
 
 
 def echo(update, context):
-    botMessage()
+    botTest()
 
 
 def error(update, context):
@@ -69,10 +69,18 @@ def main():
 updater = Updater(TOKEN, use_context=True)
 
 
+
 def botMessage():
     from parse import message
     ret_msg = updater.bot.sendMessage(
         chat_id=chatId, text=message, parse_mode="Markdown")
+    assert ret_msg.message_id
+
+
+def botTest():
+    from parse import message
+    ret_msg = updater.bot.sendMessage(
+        chat_id=chatIdTest, text=message, parse_mode="Markdown")
     assert ret_msg.message_id
 
  
