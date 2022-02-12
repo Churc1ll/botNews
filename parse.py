@@ -61,12 +61,12 @@ def weather():
       'widget-row-chart widget-row-chart-temperature-avg'
   )
   sum = ''.join(re.findall(
-      r'(?<=unit unit_temperature_c).*', str(quote)))[2:3]
+      r'(?<=unit unit_temperature_c).*', str(quote)))[2:4]
   return sum
 
 
 def message():
-    return 'За ' + date() + ' количество зараженных по Москве:  *' + corona() + '*' + ' человек\nСреднесуточная температура: ' + '*' + weather() + '*' + '\u00B0\n\nКурс доллара: ' + dollar() + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
+    return 'За ' + date() + ' количество зараженных по Москве:  *' + corona() + '*' + ' человек\nСреднесуточная температура: ' + '*' + weather() + '\u00B0' + '*' + '\n\nКурс доллара: ' + dollar() + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
 
 
 message = message()
