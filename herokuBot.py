@@ -81,8 +81,8 @@ def botTest():
     ret_msg = updater.bot.sendMessage(
         chat_id=chatIdTest, text=message, parse_mode="Markdown")
     assert ret_msg.message_id
-    messageNumber = ret_msg.message_id
-    updater.bot.editMessageText(chat_id=chatIdTest, message_id=messageNumber-2, text = 'xuiii' )
+    # messageNumber = ret_msg.message_id
+    # updater.bot.editMessageText(chat_id=chatIdTest, message_id=messageNumber-2, text = '' )
 
  
 if __name__ == '__main__':
