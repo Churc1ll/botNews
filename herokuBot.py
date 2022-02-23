@@ -83,8 +83,8 @@ def botTest():
     ret_msg = updater.bot.sendMessage(
         chat_id=chatIdTest, text=message, parse_mode="Markdown")
     assert ret_msg.message_id
-    print (ret_msg.message_id + 'current')
-    print (messageNumber + 'save')
+    print ('' + str(ret_msg.message_id) + 'current')
+    print ('' + str(messageNumber) + 'save')
     messageNumber = ret_msg.message_id
 
  
