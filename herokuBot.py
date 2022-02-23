@@ -77,12 +77,15 @@ def botMessage():
     assert ret_msg.message_id
 
 
+messageNumber = 0
 def botTest():
     from parse import message
     ret_msg = updater.bot.sendMessage(
         chat_id=chatIdTest, text=message, parse_mode="Markdown")
     assert ret_msg.message_id
-    print (ret_msg.message_id)
+    print (ret_msg.message_id + 'current')
+    print (messageNumber + 'save')
+    messageNumber = ret_msg.message_id
 
  
 if __name__ == '__main__':
