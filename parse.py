@@ -50,11 +50,17 @@ def dollar():
 
 
 def bitcoin():
+    # quote = parse(
+    #     'https://www.rbc.ru/crypto/currency/btcusd',
+    #     'span',
+    #     'currencies__td__inner'
+    # )[1]
     quote = parse(
-        'https://www.rbc.ru/crypto/currency/btcusd',
-        'span',
-        'currencies__td__inner'
-    )[1]
+        'https://www.google.com/finance/quote/BTC-USD',
+        'div',
+        'YMlKec fxKbKc'
+    )
+    print (quote)
     sum = ''.join(re.findall(r'\d+', str(quote)))
     return sum[0:2] + ' ' + sum[2:5] + ',' + (sum[5:] if len(sum) > 6 else '00')
 
@@ -71,7 +77,7 @@ def weather():
 
 
 def message():
-    return 'За ' + date() + ' количество зараженных по Москве:  *' + corona() + '*' + ' человек\nСреднесуточная температура: ' + '*' + weather() + '\u00B0' + '*' + '\n\nКурс доллара ЦБ: ' + dollar() + '\u20BD\nКурс биткойна: ' + '**' + '$'
+    return 'За ' + date() + ' количество зараженных по Москве:  *' + corona() + '*' + ' человек\nСреднесуточная температура: ' + '*' + weather() + '\u00B0' + '*' + '\n\nКурс доллара ЦБ: ' + dollar() + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
 
 
 message = message()
