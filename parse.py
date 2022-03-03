@@ -53,16 +53,15 @@ def bitcoin():
     return sum[0:2] + ' ' + sum[2:5] + ',' + (sum[5:] if len(sum) > 6 else '00')
 
 
-
-def weather(): 
-  quote = parse(
-      'https://www.gismeteo.ru/weather-moscow-4368/2-weeks/',
-      'div',
-      'widget-row-chart widget-row-chart-temperature-avg'
-  )
-  sum = ''.join(re.findall(
-      r'(?<=unit unit_temperature_c).*', str(quote)))[2:4]
-  return sum
+def weather():
+    quote = parse(
+        'https://www.gismeteo.ru/weather-moscow-4368/2-weeks/',
+        'div',
+        'widget-row-chart widget-row-chart-temperature-avg'
+    )
+    sum = ''.join(re.findall(
+        r'(?<=unit unit_temperature_c).*', str(quote)))[2:4]
+    return sum
 
 
 def message():
@@ -70,7 +69,3 @@ def message():
 
 
 message = message()
-print(message)
-
-
-
