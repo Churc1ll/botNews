@@ -32,15 +32,21 @@ def corona():
 
 def dollar():
     quotes = parse(
-        'https://cbr.ru/',
+        # 'https://cbr.ru/',
+        # 'div',
+        # 'col-md-2 col-xs-9 _right mono-num'
+        'https://finance.rambler.ru/currencies/USD/',
         'div',
-        'col-md-2 col-xs-9 _right mono-num'
+        'finance-currency-plate__currency'
     )
-    # quote = quotes[0]
-    quote = quotes[1]
+    # print(len('<div class="finance-currency-plate__currency">'))
+    quote = quotes[0]
+    # quote = quotes[1]
     # quote = quotes[0] if now.day % 2 != 0 or now.hour > 12 else quotes[1]
-    sum = ''.join(re.findall(r'\d+', str(quote)[33:]))
-    return '*' + sum[0:2] + ',' + sum[2:4] + '*'
+    # sum = ''.join(re.findall(r'\d+', str(quote)[46:54]))
+    sum = ''.join((str(quote)[47:53]))
+    return '*' + sum[0:3] + ',' + sum[4:6] + '*'
+    return '*' + sum +'*'
 
 
 def bitcoin():
@@ -69,3 +75,4 @@ def message():
 
 
 message = message()
+print(message)
