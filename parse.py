@@ -40,13 +40,13 @@ def dollar():
         'finance-currency-plate__currency'
     )
     # print(len('<div class="finance-currency-plate__currency">'))
-    quote = quotes[0]
+    quote = quotes[1]
     # quote = quotes[1]
     # quote = quotes[0] if now.day % 2 != 0 or now.hour > 12 else quotes[1]
     # sum = ''.join(re.findall(r'\d+', str(quote)[46:54]))
     sum = ''.join((str(quote)[47:53]))
     return '*' + sum[0:3] + ',' + sum[4:6] + '*'
-    return '*' + sum +'*'
+    return '*' + sum + '*'
 
 
 def bitcoin():
@@ -60,7 +60,7 @@ def bitcoin():
         'div',
         'YMlKec fxKbKc'
     )
-    print (quote)
+    print(quote)
     sum = ''.join(re.findall(r'\d+', str(quote)))
     return sum[0:2] + ' ' + sum[2:5] + ',' + (sum[5:] if len(sum) > 6 else '00')
 
@@ -77,7 +77,7 @@ def weather():
 
 
 def message():
-    return 'За ' + date() + ' количество зараженных по Москве:  *' + corona() + '*' + ' человек\nСреднесуточная температура: ' + '*' + weather() + '\u00B0' + '*' + '\n\nКурс доллара ЦБ: ' + dollar() + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
+    return 'За ' + date() + ' количество зараженных по Москве:  *' + corona() + '*' + ' человек\nСреднесуточная температура: ' + '*' + weather() + '\u00B0' + '*' + '\n\nКурс доллара ЦБ на завтра: ' + dollar() + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
 
 
 message = message()
