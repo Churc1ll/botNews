@@ -8,7 +8,6 @@ headers = {
 }
 
 now = datetime.datetime.now()
-print(now.weekday())
 
 
 def date():
@@ -69,11 +68,6 @@ def weather():
     sum = ''.join(re.findall(
         r'(?<=unit unit_temperature_c).*', str(quote)))[2:4]
     return sum
-
-
-if now.weekday() > 3:
-    def message():
-        return 'За ' + date() + ' количество зараженных по Москве:  *' + corona() + '*' + ' человек\nСреднесуточная температура: ' + '*' + weather() + '\u00B0' + '*' + '\n\nКурс доллара ЦБ на понедельник: ' + dollar() + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
 
 
 def message():
