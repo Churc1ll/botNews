@@ -8,6 +8,7 @@ headers = {
 }
 
 now = datetime.datetime.now()
+print(now.weekday())
 
 
 def date():
@@ -32,20 +33,15 @@ def corona():
 
 def dollar():
     quotes = parse(
-        # 'https://cbr.ru/',
-        # 'div',
-        # 'col-md-2 col-xs-9 _right mono-num'
         'https://finance.rambler.ru/currencies/USD/',
         'div',
         'finance-currency-plate__currency'
     )
-    # print(len('<div class="finance-currency-plate__currency">'))
     quote = quotes[1]
     # quote = quotes[0] if now.day % 2 != 0 or now.hour > 12 else quotes[1]
     # sum = ''.join(re.findall(r'\d+', str(quote)[46:54]))
     sum = ''.join((str(quote)[47:53]))
     return '*' + sum[0:3] + ',' + sum[4:6] + '*'
-    return '*' + sum + '*'
 
 
 def bitcoin():
@@ -75,8 +71,16 @@ def weather():
     return sum
 
 
+if now.weekday() > 3:
+    def message():
+        return 'За ' + date() + ' количество зараженных по Москве:  *' + corona() + '*' + ' человек\nСреднесуточная температура: ' + '*' + weather() + '\u00B0' + '*' + '\n\nКурс доллара ЦБ на понедельник: ' + dollar() + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
+
+
 def message():
-    return 'За ' + date() + ' количество зараженных по Москве:  *' + corona() + '*' + ' человек\nСреднесуточная температура: ' + '*' + weather() + '\u00B0' + '*' + '\n\nКурс доллара ЦБ на завтра: ' + dollar() + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
+    if now.weekday() > 3:
+        return 'За ' + date() + ' количество зараженных по Москве:  *' + corona() + '*' + ' человек\nСреднесуточная температура: ' + '*' + weather() + '\u00B0' + '*' + '\n\nКурс доллара ЦБ на понедельник: ' + dollar() + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
+    else:
+        return 'За ' + date() + ' количество зараженных по Москве:  *' + corona() + '*' + ' человек\nСреднесуточная температура: ' + '*' + weather() + '\u00B0' + '*' + '\n\nКурс доллара ЦБ на завтра: ' + dollar() + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
 
 
 message = message()
