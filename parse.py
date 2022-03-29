@@ -100,6 +100,7 @@ def message():
 
 __Курс доллара__
 ЦБ: *{dollarCB()}$*
+Биржа: *{dollarMarket()}$*
 AliExpress:*{dollarAliExpress()}*$
 
 Курс биткойна: *{bitcoin()}*$
