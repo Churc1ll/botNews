@@ -83,9 +83,6 @@ def message():
     return f'''
 *{date.today():%d.%m}_
 
-__Курс доллара__
-ЦБ: *{dollarCB()}$*
-
 Среднесуточная температура: *{weather()}*\u00B0
 '''.strip()
 
