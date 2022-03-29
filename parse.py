@@ -96,7 +96,6 @@ def message():
 # Среднесуточная температура: *{weather()}*\u00B0
 # '''.strip()
     return f''' 
-*{date.today():%d.%m.%y}*
 
 __Курс доллара__
 ЦБ: *{dollarCB()}$*
@@ -109,7 +108,7 @@ AliExpress:*{dollarAliExpress()}*$
 в Москве / России, человек:
 *{coronaMoscow()}* / *{coronaRF()}*
 
-
+Среднесуточная температура: *{weather()}*\u00B0
 '''.strip()
 
     # return 'За ' + date() + ' количество зараженных по Москве:  *' + corona() + '*' + ' человек\nСреднесуточная температура: ' + '*' + weather() + '\u00B0' + '*' + '\n\nКурс доллара ЦБ на сегодня: ' + dollar() + '\u20BD\nБиржевой курс $: ' + '*' + tradeDollar() + '*' + '\u20BD\nСтоимость 1$ на Aliexpress:' + '*' + aliexpress() + '*' + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$' 
