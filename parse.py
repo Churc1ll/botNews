@@ -42,8 +42,8 @@ def dollarCB():
 
 def dollarMarket():
     quotes = []
-    while quotes == []:
-      quotes = parse(
+    # while quotes == []:
+    quotes = parse(
         'https://quote.rbc.ru/ticker/59111',
         'span',
         'chart__info__sum',
@@ -77,8 +77,6 @@ def weather():
     sum = ''.join(re.findall(
         r'(?<=unit unit_temperature_c">)\d+', str(quote)))[2:4]
     return sum
-time = date.today().strftime("%d.%m")
-
 
 def message():
 #     return f'''
@@ -98,7 +96,7 @@ def message():
 # Среднесуточная температура: *{weather()}*\u00B0
 # '''.strip()
     return f''' 
-{date.today():%d.%m}
+*{date.today():%d.%m}*
 
 __Курс доллара__
 ЦБ: *{dollarCB()}$*
