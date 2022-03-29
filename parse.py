@@ -41,13 +41,14 @@ def dollarCB():
     return sum[0:2] + ',' + sum[3:5]
 
 def dollarMarket():
-    quotes = []
     # while quotes == []:
     quotes = parse(
         'https://quote.rbc.ru/ticker/59111',
         'span',
         'chart__info__sum',
     )
+    if quotes == None: 
+      return dollarMarket()
     return ''.join(re.findall(r'\d+\W\d\d', str(quotes)))
 
 def dollarAliExpress():
@@ -100,7 +101,7 @@ def message():
 
 __Курс доллара__
 ЦБ: *{dollarCB()}$*
-
+Биржа: *{dollarMarket()}$*
 AliExpress:*{dollarAliExpress()}*$
 
 Курс биткойна: *{bitcoin()}*$
