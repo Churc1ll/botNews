@@ -97,8 +97,8 @@ def message():
 
 # Среднесуточная температура: *{weather()}*\u00B0
 # '''.strip()
-    return f'''
-{time}
+    return f''' 
+{date.today():%d.%m}
 
 __Курс доллара__
 ЦБ: *{dollarCB()}$*
