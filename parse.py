@@ -77,6 +77,7 @@ def weather():
     sum = ''.join(re.findall(
         r'(?<=unit unit_temperature_c">)\d+', str(quote)))[2:4]
     return sum
+time = date.today().strftime("%d.%m")
 
 
 def message():
@@ -97,6 +98,7 @@ def message():
 # Среднесуточная температура: *{weather()}*\u00B0
 # '''.strip()
     return f'''
+# *{time}_
 
 __Курс доллара__
 ЦБ: *{dollarCB()}$*
