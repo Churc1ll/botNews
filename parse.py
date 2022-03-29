@@ -81,6 +81,8 @@ def weather():
 
 def message():
     return f'''
+*{date.today():%d.%m}_
+
 Среднесуточная температура: *{weather()}*\u00B0
 '''.strip()
 
