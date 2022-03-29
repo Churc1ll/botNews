@@ -41,14 +41,11 @@ def dollarCB():
     return sum[0:2] + ',' + sum[3:5]
 
 def dollarMarket():
-    # while quotes == []:
     quotes = parse(
-        'https://quote.rbc.ru/ticker/59111',
+        'https://ru.investing.com/currencies/usd-rub',
         'span',
-        'chart__info__sum',
+        'text-2xl',
     )
-    if quotes == None: 
-      return dollarMarket()
     return ''.join(re.findall(r'\d+\W\d\d', str(quotes)))
 
 def dollarAliExpress():
