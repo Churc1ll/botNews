@@ -98,7 +98,9 @@ def weather():
 def message():
     # if now.hour < 15:
     # and now.weekday() <= 4:
-    return 'За ' + date() + ' количество зараженных по Москве:  *' + corona() + '*' + ' человек\nСреднесуточная температура: ' + '*' + weather() + '\u00B0' + '*' + '\n\nКурс доллара ЦБ на сегодня: ' + dollar() + '\u20BD\nБиржевой курс $: ' + '*' + tradeDollar() + '*' + '\u20BD\nСтоимость 1$ на Aliexpress:' + '*' + aliexpress() + '*' + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
+    return 'За ' + date() + ' количество зараженных по Москве:  *' + corona() + '*' + ' человек\nСреднесуточная температура: ' + '*' + weather() + '\u00B0' + '*' + '\n\nКурс доллара ЦБ на сегодня: ' + dollar() + '\u20BD\nБиржевой курс $: ' + '*'
+
+    #  + tradeDollar() + '*' + '\u20BD\nСтоимость 1$ на Aliexpress:' + '*' + aliexpress() + '*' + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
 
     # if now.hour > 15:
     #     # and now.weekday() <= 4:
