@@ -80,22 +80,23 @@ def weather():
 
 
 def message():
-    return f'''
-*{date.today():%d.%m}_
+  return 'dod'
+#     return f'''
+# *{date.today():%d.%m}_
 
-__Курс доллара__
-ЦБ: *{dollarCB()}$*
-Биржа: *{dollarMarket()}$*
-AliExpress:*{dollarAliExpress()}*$
+# __Курс доллара__
+# ЦБ: *{dollarCB()}$*
+# Биржа: *{dollarMarket()}$*
+# AliExpress:*{dollarAliExpress()}*$
 
-Курс биткойна: *{bitcoin()}*$
+# Курс биткойна: *{bitcoin()}*$
 
-Новые случаи короновируса 
-в Москве / России, человек:
-*{coronaMoscow()}* / *{coronaRF()}*
+# Новые случаи короновируса 
+# в Москве / России, человек:
+# *{coronaMoscow()}* / *{coronaRF()}*
 
-Среднесуточная температура: *{weather()}*\u00B0
-'''.strip()
+# Среднесуточная температура: *{weather()}*\u00B0
+# '''.strip()
 
     # return 'За ' + date() + ' количество зараженных по Москве:  *' + corona() + '*' + ' человек\nСреднесуточная температура: ' + '*' + weather() + '\u00B0' + '*' + '\n\nКурс доллара ЦБ на сегодня: ' + dollar() + '\u20BD\nБиржевой курс $: ' + '*' + tradeDollar() + '*' + '\u20BD\nСтоимость 1$ на Aliexpress:' + '*' + aliexpress() + '*' + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$' 
 
