@@ -74,8 +74,8 @@ def weather():
         'div',
         'widget-row-chart widget-row-chart-temperature-avg'
     )
-    sum = ''.join(re.findall(
-        r'(?<=unit unit_temperature_c">)\d+', str(quote)))[2:4]
+
+    sum = re.findall(r'(?<=unit unit_temperature_c">)(−\d+|\d+)', str(quote))[0]
     return sum
 
 def message():
@@ -96,7 +96,7 @@ def message():
 # Среднесуточная температура: *{weather()}*\u00B0
 # '''.strip()
     return f''' 
-*{date.today():%d.%m}*
+*{date.today():%d.%m.%y}*
 
 __Курс доллара__
 ЦБ: *{dollarCB()}$*
