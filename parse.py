@@ -112,4 +112,4 @@ AliExpress:*{dollarAliExpress()}*$
 
 message = message()
 
-# print(message)
+print(message)
