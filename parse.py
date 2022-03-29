@@ -84,6 +84,7 @@ def message():
 
 __Курс доллара__
 ЦБ: *{dollarCB()}$*
+Биржа: *{dollarMarket()}$*
 
 Курс биткойна: *{bitcoin()}*$
 
