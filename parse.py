@@ -80,11 +80,27 @@ def weather():
 
 
 def message():
+#     return f'''
+# *{date.today():%d.%m}_
+
+# __Курс доллара__
+# ЦБ: *{dollarCB()}$*
+# Биржа: *{dollarMarket()}$*
+# AliExpress:*{dollarAliExpress()}*$
+
+# Курс биткойна: *{bitcoin()}*$
+
+# Новые случаи короновируса 
+# в Москве / России, человек:
+# *{coronaMoscow()}* / *{coronaRF()}*
+
+# Среднесуточная температура: *{weather()}*\u00B0
+# '''.strip()
     return f'''
 
 __Курс доллара__
 ЦБ: *{dollarCB()}$*
-Биржа: *{dollarMarket()}$*
+AliExpress:*{dollarAliExpress()}*$
 
 Курс биткойна: *{bitcoin()}*$
 
