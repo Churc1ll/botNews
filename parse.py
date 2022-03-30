@@ -147,3 +147,4 @@ print(message)
 #TODO 
 # 1 chat with bot to send private messages
 # 2 check growth fall and make icon
+# 3 description on git
