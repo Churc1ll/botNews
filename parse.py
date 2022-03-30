@@ -84,7 +84,7 @@ def message():
     return template.format(
       today=today,
       dollarCB=dollarCB(),
-      # dollarMarket=dollarMarket(),
+      dollarMarket=dollarMarket(),
       dollarAliExpress=dollarAliExpress(),
       bitcoin=bitcoin(),
       coronaMoscow=coronaMoscow(),
