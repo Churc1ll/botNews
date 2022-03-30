@@ -79,7 +79,7 @@ def weather():
 def message():
 
 
-  with open('c:/projects/python/bot/message.yaml', encoding="utf-8") as conf_file:
+  with open('message.yaml', encoding="utf-8") as conf_file:
     template = yaml.safe_load(conf_file.read() )['message']
     
     return template.format(
