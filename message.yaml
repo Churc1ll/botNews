@@ -2,7 +2,7 @@ message: |
   *{today}*
   ____Курс доллара____
   ЦБ: *{dollarCB}$*
-  Биржа: *{dollarMarket}$*
+  Биржа: *{dollarMarket}*$
   AliExpress:*{dollarAliExpress}*$
 
   Курс биткойна: *{bitcoin}*$
