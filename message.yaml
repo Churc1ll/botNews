@@ -1,14 +1,14 @@
 message: |
   <i>*{today}*</i>
-  Курс доллара
-  ЦБ: *{dollarCB}$*
-  Биржа: *{dollarMarket}*$
-  AliExpress:*{dollarAliExpress}*$
+  <u>Курс доллара</u>
+  ЦБ: <b>{dollarCB}$</b>
+  Биржа: <b>{dollarMarket}</b>$
+  AliExpress:<b>{dollarAliExpress}</b>$
 
-  Курс биткойна: *{bitcoin}*$
+  Курс биткойна: <b>{bitcoin}</b>$
 
   Новые случаи короновируса 
   в Москве / России, человек:
-  *{coronaMoscow}* / *{coronaRF}*
+  <b>{coronaMoscow}</b> / <b>{coronaRF}</b>
 
-  Среднесуточная температура: *{weather}*{degree}
+  Среднесуточная температура: <b>{weather}</b>{degree}
