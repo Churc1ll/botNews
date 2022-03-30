@@ -7,6 +7,8 @@ headers = {
     "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
 }
 
+today=date.today().strftime('%d.%m')
+
 def parse(url, tag, details):
     response = requests.get(url, headers=headers)
     answer = BeautifulSoup(response.text, 'lxml')
@@ -77,16 +79,12 @@ def weather():
     return sum
 
 def message():
-
-
   with open('message.yaml', encoding="utf-8") as conf_file:
     template = yaml.safe_load(conf_file.read() )['message']
-    today=date.today().strftime('%d.%m')
-    print(today)
     return template.format(
-      # today=today,
+      today=today,
       dollarCB=dollarCB(),
-      dollarMarket=dollarMarket(),
+      # dollarMarket=dollarMarket(),
       dollarAliExpress=dollarAliExpress(),
       bitcoin=bitcoin(),
       coronaMoscow=coronaMoscow(),
@@ -142,5 +140,3 @@ AliExpress:*{dollarAliExpress()}*$
 
 message = message()
 print(message) 
-
-    
