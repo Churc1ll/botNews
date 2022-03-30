@@ -75,10 +75,16 @@ def botMessage():
     assert ret_msg.message_id
 
 def botTest():
+  
     from parse import message
     ret_msg = updater.bot.sendMessage(
-        chat_id=chatIdTest, text=message, parse_mode="HTML")
+        chat_id=message.chat.id, text=message, parse_mode="HTML")
     assert ret_msg.message_id
+
+    # from parse import message
+    # ret_msg = updater.bot.sendMessage(
+    #     chat_id=chatIdTest, text=message, parse_mode="HTML")
+    # assert ret_msg.message_id
 
 
 if __name__ == '__main__':
