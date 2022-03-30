@@ -92,6 +92,7 @@ def message():
       coronaRF=coronaRF(),
       weather=weather(),
       degree=u'\u00B0',
+      ruble=u'\u20BD',
     )
 #     return f'''
 # *{date.today():%d.%m}_
@@ -141,3 +142,8 @@ AliExpress:*{dollarAliExpress()}*$
 
 message = message()
 print(message) 
+
+
+#TODO 
+# 1 chat with bot to send private messages
+# 2 check growth fall and make icon

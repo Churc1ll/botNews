@@ -1,9 +1,9 @@
 message: |
   <i>{today}</i>
   <u>Курс доллара</u>
-  ЦБ: <b>{dollarCB}$</b>
-  Биржа: <b>{dollarMarket}</b>$
-  AliExpress:<b>{dollarAliExpress}</b>$
+  ЦБ: <b>{dollarCB}</b>{ruble}
+  Биржа: <b>{dollarMarket}</b>{ruble}
+  AliExpress:<b>{dollarAliExpress}</b>{ruble}
 
   Курс биткойна: <b>{bitcoin}</b>$
 
