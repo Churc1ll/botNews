@@ -81,18 +81,19 @@ def message():
 
   with open('message.yaml', encoding="utf-8") as conf_file:
     template = yaml.safe_load(conf_file.read() )['message']
-    
+    today=date.today().strftime('%d.%m')
+    print(today)
     return template.format(
-      # dollarCB=dollarCB(),
-      # dollarMarket=dollarMarket(),
-      # dollarAliExpress=dollarAliExpress(),
+      # today=today,
+      dollarCB=dollarCB(),
+      dollarMarket=dollarMarket(),
+      dollarAliExpress=dollarAliExpress(),
       bitcoin=bitcoin(),
-      # coronaMoscow=coronaMoscow(),
-      # coronaRF=coronaRF(),
-      # weather=weather(),
-      # degree=u'\u00B0',
+      coronaMoscow=coronaMoscow(),
+      coronaRF=coronaRF(),
+      weather=weather(),
+      degree=u'\u00B0',
     )
-
 #     return f'''
 # *{date.today():%d.%m}_
 
