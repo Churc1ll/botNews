@@ -1,6 +1,6 @@
 message: |
-    <i>*{today}*</i>
-  ____Курс доллара____
+  <i>*{today}*</i>
+  Курс доллара
   ЦБ: *{dollarCB}$*
   Биржа: *{dollarMarket}*$
   AliExpress:*{dollarAliExpress}*$
