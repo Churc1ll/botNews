@@ -72,7 +72,7 @@ updater = Updater(TOKEN, use_context=True)
 def botMessage():
     from parse import message
     ret_msg = updater.bot.sendMessage(
-        chat_id=chatId, text=message, parse_mode="Markdown")
+        chat_id=chatId, text=message, parse_mode="MarkdownV2")
     assert ret_msg.message_id
 
 
