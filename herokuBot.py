@@ -62,7 +62,6 @@ def main():
     # SIGTERM or SIGABRT. This should be used most of the time, since
     # start_polling() is non-blocking and will stop the bot gracefully.
 
-    # botMessage()
     updater.idle()
 
 
@@ -75,13 +74,11 @@ def botMessage():
         chat_id=chatId, text=message, parse_mode="HTML")
     assert ret_msg.message_id
 
-
 def botTest():
     from parse import message
     ret_msg = updater.bot.sendMessage(
         chat_id=chatIdTest, text=message, parse_mode="HTML")
     assert ret_msg.message_id
-    # updater.bot.editMessageText(chat_id=chatIdTest, message_id=messageNumber-2, text = '' )
 
 
 if __name__ == '__main__':
@@ -92,12 +89,9 @@ if __name__ == '__main__':
 #     time.sleep( 86400 )
     # sleep to avoid running the function again in the next loop
 
-
 # schedule.every(1).day.do(botMessage)
 # or
 # schedule.every().day.at("13:25").do(botMessage)
-
-# schedule version
 
 # while True:
 #     schedule.run_pending()
