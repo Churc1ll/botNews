@@ -57,7 +57,8 @@ def dollarAliExpress():
     'b-tabcurr__td',
   )
   quotes = str(quotes).split(',')[2]
-  return ''.join(re.findall(r'\d+\W\d+', str(quotes)))
+  answ = ''.join(re.findall(r'\d+\W\d+', str(quotes)))
+  return ','.join(answ.split('.'))
 
 def bitcoin():
     quote = parse(
