@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 from datetime import date
-
+import yaml
 headers = {
     "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
 }
@@ -77,6 +77,22 @@ def weather():
     return sum
 
 def message():
+
+
+  with open('c:/projects/python/bot/message.yaml', encoding="utf-8") as conf_file:
+    template = yaml.safe_load(conf_file.read() )['message']
+    
+    return template.format(
+      dollarCB=dollarCB(),
+      dollarMarket=dollarMarket(),
+      dollarAliExpress=dollarAliExpress(),
+      bitcoin=bitcoin(),
+      coronaMoscow=coronaMoscow(),
+      coronaRF=coronaRF(),
+      weather=weather(),
+      degree=u'\u00B0',
+    )
+
 #     return f'''
 # *{date.today():%d.%m}_
 
@@ -124,5 +140,6 @@ AliExpress:*{dollarAliExpress()}*$
 
 
 message = message()
+# print(message) 
 
-print(message)
+    
