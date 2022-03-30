@@ -1,11 +1,11 @@
 message: |
   *{today}*
-  ____Курс доллара____
-  ЦБ: *{dollarCB}$*
-  Биржа: *{dollarMarket}*$
-  AliExpress:*{dollarAliExpress}*$
+  __Курс доллара__
+  ЦБ: *{dollarCB}\$*
+  Биржа: *{dollarMarket}*\$
+  AliExpress:*{dollarAliExpress}*\$
 
-  Курс биткойна: *{bitcoin}*$
+  Курс биткойна: *{bitcoin}*\$
 
   Новые случаи короновируса 
   в Москве \/ России, человек:
