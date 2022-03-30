@@ -1,13 +1,2 @@
 message: |
-  ____Курс доллара____
-  ЦБ: *{dollarCB}$*
-  Биржа: *{dollarMarket}$*
-  AliExpress:*{dollarAliExpress}*$
-
   Курс биткойна: *{bitcoin}*$
-
-  Новые случаи короновируса 
-  в Москве / России, человек:
-  *{coronaMoscow}* / *{coronaRF}*
-
-  Среднесуточная температура: *{weather}*{degree}

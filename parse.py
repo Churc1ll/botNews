@@ -83,14 +83,14 @@ def message():
     template = yaml.safe_load(conf_file.read() )['message']
     
     return template.format(
-      dollarCB=dollarCB(),
-      dollarMarket=dollarMarket(),
-      dollarAliExpress=dollarAliExpress(),
+      # dollarCB=dollarCB(),
+      # dollarMarket=dollarMarket(),
+      # dollarAliExpress=dollarAliExpress(),
       bitcoin=bitcoin(),
-      coronaMoscow=coronaMoscow(),
-      coronaRF=coronaRF(),
-      weather=weather(),
-      degree=u'\u00B0',
+      # coronaMoscow=coronaMoscow(),
+      # coronaRF=coronaRF(),
+      # weather=weather(),
+      # degree=u'\u00B0',
     )
 
 #     return f'''
