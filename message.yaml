@@ -3,7 +3,7 @@ message: |
   <u>Курс доллара</u>
   ЦБ: <b>{dollarCB}</b>{ruble}
   Биржа: <b>{dollarMarket}</b>{ruble}
-  AliExpress:<b>{dollarAliExpress}</b>{ruble}
+  AliExpress: <b>{dollarAliExpress}</b>{ruble}
 
   Курс биткойна: <b>{bitcoin}</b>$
 

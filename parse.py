@@ -75,9 +75,8 @@ def weather():
         'div',
         'widget-row-chart widget-row-chart-temperature-avg'
     )
-
-    sum = re.findall(r'(?<=unit unit_temperature_c">)(−\d+|\d+)', str(quote))[0]
-    return sum
+    sum = re.findall(r'(?<=unit unit_temperature_c">)(−\d+|\+\d+|0)', str(quote))[0]
+    return (sum)
 
 def message():
   with open('message.yaml', encoding="utf-8") as conf_file:
