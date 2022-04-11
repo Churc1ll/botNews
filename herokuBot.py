@@ -18,6 +18,8 @@ logger = logging.getLogger(__name__)
 # Define a few command handlers. These usually take the two arguments update and
 # context. Error handlers also receive the raised TelegramError object in error.
 
+def writeCourse(update, context):
+    botMessageCourse()
 
 def start(update, context):
     botMessage()
@@ -44,6 +46,8 @@ def main():
 
     # on different commands - answer in Telegram
     dp.add_handler(CommandHandler("star", start))
+
+    dp.add_handler(CommandHandler("d", writeCourse))
 
     # on noncommand i.e message - echo the message on Telegram
     dp.add_handler(MessageHandler(Filters.text, echo))
@@ -72,6 +76,13 @@ def botMessage():
     from parse import message
     ret_msg = updater.bot.sendMessage(
         chat_id=chatId, text=message, parse_mode="HTML")
+    assert ret_msg.message_id
+
+
+def botMessageCourse():
+    from parse import messageCB
+    ret_msg = updater.bot.sendMessage(
+        chat_id=chatIdTest, text=messageCB, parse_mode="HTML")
     assert ret_msg.message_id
 
 def botTest():

@@ -12,3 +12,7 @@ message: |
   <b>{coronaMoscow}</b> / <b>{coronaRF}</b>
 
   Среднесуточная температура: <b>{weather}</b>{degree}
+
+messageCB: |
+  <u>Курс доллара ЦБ</u>
+  <b>{dollarCB4}</b>{ruble}

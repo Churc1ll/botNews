@@ -39,8 +39,19 @@ def dollarCB():
         'div',
         'finance-currency-plate__currency'
     )[1]
-    sum = ''.join((str(quotes)[47:53]))
-    return sum[0:2] + ',' + sum[3:5]
+    return ''.join(re.findall(r'>*\d\d\D\d\d', str(quotes))).replace(r'.', ',')
+
+    # sum = ''.join((str(quotes)[47:53]))
+    # return sum[0:2] + ',' + sum[3:5]
+
+def dollarCB4():
+    quotes = parse(
+        'https://finance.rambler.ru/currencies/USD/',
+        'div',
+        'finance-currency-plate__currency'
+    )[1]
+    return ''.join(re.findall(r'>*\d+\D\d+', str(quotes))).replace(r'.', ',')
+
 
 def dollarMarket():
     quotes = parse(
@@ -93,6 +104,14 @@ def message():
       degree=u'\u00B0',
       ruble=u'\u20BD',
     )
+
+def messageCB():
+  with open('message.yaml', encoding="utf-8") as conf_file:
+    template = yaml.safe_load(conf_file.read() ) ['messageCB']
+    return template.format(
+      dollarCB4=dollarCB4(),
+      ruble=u'\u20BD',
+    )
 #     return f'''
 # *{date.today():%d.%m}_
 
@@ -132,15 +151,15 @@ AliExpress:*{dollarAliExpress()}*$
     #     # and now.weekday() <= 4:
     #     return 'За ' + date() + ' количество зараженных по Москве:  *' + corona() + '*' + ' человек\nСреднесуточная температура: ' + '*' + weather() + '\u00B0' + '*' + '\n\nКурс доллара ЦБ на завтра: ' + dollar() + '\u20BD\nБиржевой курс $: ' + '*' + tradeDollar() + '*' + '\u20BD\nСтоимость 1$ на Aliexpress:' + '*' + aliexpress() + '*' + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
 
-    # if now.weekday() > 4:
-    #     return 'За ' + date() + ' количество зараженных по Москве:  *' + corona() + '*' + ' человек\nСреднесуточная температура: ' + '*' + weather() + '\u00B0' + '*' + '\n\nКурс доллара ЦБ на понедельник: ' + dollar() + '\u20BD\nСтоимость 1$ на Aliexpress: ' + '*' + aliexpress() + '*' + ' \u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
 
     # else:
     #     return 'За ' + date() + ' количество зараженных по Москве:  *' + corona() + '*' + ' человек\nСреднесуточная температура: ' + '*' + weather() + '\u00B0' + '*' + '\n\nКурс доллара ЦБ на завтра: ' + dollar() + '\u20BD\nБиржевой курс $: ' + '*' + tradeDollar() + '*' + '\u20BD\nСтоимость 1$ на Aliexpress:' + '*' + aliexpress() + '*' + '\u20BD\nКурс биткойна: ' + '*' + bitcoin() + '*' + '$'
 
 
 message = message()
-print(message) 
+messageCB = messageCB()
+# print(messageCB)
+# print(message) 
 
 
 #TODO 
