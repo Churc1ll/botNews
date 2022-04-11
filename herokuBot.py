@@ -6,6 +6,7 @@ TOKEN = os.environ["TOKEN"]
 
 chatId = -1001546899691
 chatIdTest = -755407856
+chatIdCourse =-575691032
 
 PORT = int(os.environ.get('PORT', 5000))
 
@@ -82,7 +83,7 @@ def botMessage():
 def botMessageCourse():
     from parse import messageCB
     ret_msg = updater.bot.sendMessage(
-        chat_id=chatIdTest, text=messageCB, parse_mode="HTML")
+        chat_id=chatIdCourse, text=messageCB, parse_mode="HTML")
     assert ret_msg.message_id
 
 def botTest():
