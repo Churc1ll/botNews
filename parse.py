@@ -68,8 +68,10 @@ def dollarAliExpress():
     'b-tabcurr__td',
   )
   quote = str(quotes).split(',')[2]
-  if '-' in quote: 
+  print(quote)
+  if '>-' in quote: 
     quote =  str(quotes).split(',')[8]
+    print(quote)
   answ = ''.join(re.findall(r'\d+\W\d+', str(quote)))
   return ','.join(answ.split('.'))
 
@@ -160,8 +162,8 @@ AliExpress:*{dollarAliExpress()}*$
 
 message = message()
 messageCB = messageCB()
-# print(messageCB)
-# print(message) 
+print(messageCB)
+print(message) 
 
 
 #TODO 
